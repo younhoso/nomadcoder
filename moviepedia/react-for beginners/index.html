@@ -18,7 +18,9 @@
 		function App() {
 			const [counter, setCounter] = React.useState(0);
 			const onClick = () => {
-				setCounter(counter + 1); // state가 바뀌면, Reactrk 해당 컴포넌트를 refresh를 해준다.
+				// 현재 state를 바탕으로 다음 state를 계산해내고 싶다면 
+				// 이렇게 '(current) => current + 1'함수를 사용하는것 안전하다 
+				setCounter((current) => current + 1) 
 			}
 			return (
 				<div>
