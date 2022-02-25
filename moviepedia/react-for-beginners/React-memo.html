@@ -13,22 +13,27 @@
 	<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	<script type="text/babel">
-		function Btn({text, big}) {
-			return <button style={{
-				backgroundColor: "tomato",
-				color: "white",
-				padding: "10px 20px",
-				border: 0,
-				borderRadius: 10,
-				fontSize: big ? 18 : 16 //props기반으로 style안에서 if else를 사용할 수 있습.
-			}}>{text}</button>
+		function Btn({text, onClick}) {
+			console.log(text, "was rendered")
+			return ( 
+					<button onClick={onClick} style={{
+						backgroundColor: "tomato",
+						color: "white",
+						padding: "10px 20px",
+						border: 0,
+						borderRadius: 10
+					}}>{text}</button>
+			)
 		};
+		const MemorizdBtn = React.memo(Btn) //memo는 컴포넌트에서 리렌더링이 필요한 상황에서만 리렌더링을 하도록 설정해줄수있어요.
 		
 		function App() {
+			const [value, setValue] = React.useState("Save Changes");
+			const changeValue = () => setValue("Revert Changes");
 			return (
 				<div>
-					<Btn text={"Save Changes"} big={true}/>
-					<Btn text={"Continue"} big={false}/>
+					<MemorizdBtn text={value} onClick={changeValue}/>
+					<MemorizdBtn text={"Continue"} big={false}/>
 				</div>
 			);
 		};
