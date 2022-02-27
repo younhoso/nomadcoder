@@ -1,9 +1,9 @@
 import PropTypes from "prop-types"
 import style from './Button.module.css'
 
-function Button({onClick,text}) {
+function Button({onClick,children}) {
 	return (
-		<button onClick={onClick} className={style.btn}>{text}</button>
+		<button onClick={onClick} className={style.btn}>{children}</button>
 	);
 }
 

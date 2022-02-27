@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <input onChange={onChange} value={keyword} placeholder="Search here..." />
       <h1 className={styles.title}>{counter}</h1>
-      <Button onClick={iRunOnlyOnce} text="Continue"/>
+      <Button onClick={iRunOnlyOnce}>counter!!!</Button>
     </div>
   );
 }
