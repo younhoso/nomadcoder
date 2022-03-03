@@ -6,7 +6,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/hello">
-          <h1>Hello</h1>
+          <h1>Hello!</h1>
         </Route>
         <Route path="/movie/:id">
           <Detail />
