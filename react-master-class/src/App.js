@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Father = styled.div`
-  display: flex
+  display: flex;
 `;
 
 const Box = styled.div`
-  background-color: ${(props => props.bgColor)};
-  width: 100px;
+  background-color: ${(props) => props.bgColor};
+  width: ${(props) => props.width}px;
   height: 100px;
 `;
 
@@ -17,8 +17,8 @@ const Circle = styled(Box)`
 function App() {
   return (
     <Father>
-      <Box bgColor="teal"/>
-      <Circle bgColor="#333"/>
+      <Box bgColor="teal" width="100" />
+      <Circle bgColor="#333" width="100" />
     </Father>
   );
 }
