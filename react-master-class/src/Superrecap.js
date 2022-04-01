@@ -1,20 +1,21 @@
 import styled, { keyframes } from "styled-components";
 
+const Title = styled.h1`
+  color: ${({ theme }) => theme.textColor};
+  transition: all 0.2s ease-in-out;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
+  background-color: ${({ theme }) => theme.backgroundColor};
   ${Title}:hover {
     color: teal;
     font-size: 99px;
   }
-`;
-
-const Title = styled.h1`
-  color: tomato;
-  transition: all 0.2s ease-in-out;
 `;
 
 const Box = styled.div`
