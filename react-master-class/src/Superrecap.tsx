@@ -18,7 +18,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const Box = styled.div`
+interface ContainerProps {
+  bgColor: string;
+}
+
+const Box = styled.div<ContainerProps>`
   width: 100px;
   height: 100px;
   background-color: ${(props) => props.bgColor};
