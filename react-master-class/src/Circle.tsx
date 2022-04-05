@@ -1,29 +1,31 @@
+import { useState } from "react";
 import styled from "styled-components";
 
-interface CircleProps {
+interface ContainerProps {
   bgColor: string;
+  borderColor?: string;
+  text?: string;
 }
 
-const Container = styled.div<CircleProps>`
+const Container = styled.div<ContainerProps>`
   width: 200px;
   height: 200px;
   background-color: ${(props) => props.bgColor};
   border-radius: 100px;
+  border: 1px solid ${(props) => props.borderColor};
 `;
 
-function Circle({ bgColor }: CircleProps) {
-  return <Container bgColor={bgColor} />;
+function Circle({
+  bgColor,
+  borderColor,
+  text = "default text",
+}: ContainerProps) {
+  const [value, setValue] = useState(0);
+  setValue(2);
+  return (
+    <Container bgColor={bgColor} borderColor={borderColor ?? "transparent"}>
+      {text},{value}
+    </Container>
+  );
 }
 export default Circle;
-
-interface PlayerShape {
-  name: string;
-  age: number;
-}
-
-const sayHello = (playerObj: PlayerShape) => {
-  return `Hello ${playerObj.name} you are ${playerObj.age} years old.`;
-};
-
-sayHello({ name: "nico", age: 12 });
-sayHello({ name: "hi", age: 12, hello: 1 });
