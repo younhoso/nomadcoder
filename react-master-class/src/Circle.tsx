@@ -20,8 +20,8 @@ function Circle({
   borderColor,
   text = "default text",
 }: ContainerProps) {
-  const [value, setValue] = useState(0);
-  setValue(2);
+  const [value, setValue] = useState("");
+  setValue("hello");
   return (
     <Container bgColor={bgColor} borderColor={borderColor ?? "transparent"}>
       {text},{value}
